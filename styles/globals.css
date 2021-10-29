@@ -3,10 +3,16 @@
 @tailwind utilities;
 
 @layer base {
-  .btn-system {
-    @apply table p-1 transition-all duration-200 border border-gray-300 rounded-lg border-opacity-30 hover:bg-gray-300 hover:bg-opacity-10;
+  .hover-outlined {
+    @apply md:hover:bg-gray-400 md:hover:bg-opacity-20;
   }
-  .svg-single {
-    @apply table-cell text-center align-middle;
+  .btn-outlined {
+    @apply flex items-center p-1 transition-all duration-200 border border-gray-400 border-opacity-30 hover-outlined;
+  }
+  .nav-link {
+    @apply cursor-pointer md:px-3 md:py-1 max-w-max hover-outlined;
+  }
+  .btn-primary {
+    @apply bg-gradient-to-r hover:bg-gradient-to-l from-light-blue to-light-blue-lt;
   }
 }

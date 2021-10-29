@@ -1,22 +1,25 @@
 module.exports = {
   colors: {
-    drk: {
+    dark: {
       base: '#141618',
       txt: {
         pri: '#fff',
         sec: '#b5b3b3',
       },
       orange: '#ec633a',
-      blue: '#44f',
+      blue: '#1056c9',
     },
-    lgt: {
+    light: {
       base: '#fff',
       txt: {
         pri: '#050505',
         sec: '#65676b',
       },
       orange: '#ec633a',
-      blue: '#44f',
+      blue: {
+        DEFAULT: '#1056c9',
+        lt: '#0092f3',
+      },
     },
   },
   textColor: {

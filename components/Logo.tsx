@@ -1,6 +1,6 @@
 const Logo = () => {
   return (
-    <div className='inline-flex items-center h-full cursor-pointer text-lgt-txt-pri dark:text-drk-txt-pri'>
+    <div className='inline-flex items-center h-full text-transparent cursor-pointer bg-clip-text bg-gradient-to-br from-light-blue to-light-blue-lt'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 10 10'
@@ -11,11 +11,15 @@ const Logo = () => {
           <linearGradient id='grad1' x1='0%' y1='0%' x2='0%' y2='100%'>
             <stop
               offset='0%'
-              style={{ stopColor: '#505050', stopOpacity: 1 }}
+              style={{ stopColor: '#1056c9', stopOpacity: 1 }}
+            ></stop>
+            <stop
+              offset='50%'
+              style={{ stopColor: '#1056c9', stopOpacity: 1 }}
             ></stop>
             <stop
               offset='100%'
-              style={{ stopColor: '#c8c8c8', stopOpacity: 1 }}
+              style={{ stopColor: '#93C5FD', stopOpacity: 1 }}
             ></stop>
           </linearGradient>
         </defs>

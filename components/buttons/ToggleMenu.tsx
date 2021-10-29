@@ -16,12 +16,12 @@ const ToggleMenu = (props: ToggleMenu) => {
     <Tooltip title={title} arrow>
       <button
         onClick={() => props.setExpanded((pre) => !pre)}
-        className='btn-system'
+        className='btn-outlined'
       >
         {props.expanded ? (
-          <CloseIcon className='svg-single' />
+          <CloseIcon fontSize='small' />
         ) : (
-          <MenuRoundedIcon className='svg-single' />
+          <MenuRoundedIcon fontSize='small' />
         )}
       </button>
     </Tooltip>

@@ -11,10 +11,10 @@ const Home: NextPage = () => {
   if (!mounted) return null;
 
   return (
-    <div className='text-lgt-txt-pri dark:text-drk-txt-pri'>
+    <div className='text-light-txt-pri dark:text-dark-txt-pri'>
       <Head>
         <title>{"Trung Vu's site"}</title>
-        <link rel='icon' href='./favicon.ico' />
+        <link rel='icon' href='./favicon.svg' />
       </Head>
 
       <main>
