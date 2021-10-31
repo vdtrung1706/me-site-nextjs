@@ -2,17 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 @layer base {
   .hover-outlined {
-    @apply md:hover:bg-gray-400 md:hover:bg-opacity-20;
+    @apply bg-gray-400 bg-opacity-0 hover:bg-opacity-20 active:bg-opacity-40;
   }
   .btn-outlined {
     @apply flex items-center p-1 transition-all duration-200 border border-gray-400 border-opacity-30 hover-outlined;
   }
-  .nav-link {
-    @apply cursor-pointer md:px-3 md:py-1 max-w-max hover-outlined;
+  .list-link {
+    @apply transition-all duration-200 border-2 border-black border-opacity-0 rounded cursor-pointer active:bg-none focus:bg-opacity-0 active:border-opacity-100 dark:active:border-white max-w-max md:hover:text-black md:dark:hover:text-white;
   }
   .btn-primary {
-    @apply bg-gradient-to-r hover:bg-gradient-to-l from-light-blue to-light-blue-lt;
+    @apply bg-gradient-to-r md:hover:bg-gradient-to-l active:bg-gradient-to-l md:active:bg-gradient-to-r from-light-blue to-light-blue-lt;
+  }
+
+  .list {
+    @apply flex;
+  }
+  @media only screen and (min-width: 768px) {
+    .list:hover .list-link {
+      opacity: 0.5;
+    }
+    .list .list-link:hover {
+      opacity: 1;
+    }
   }
 }

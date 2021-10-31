@@ -1,7 +1,11 @@
-import { NextPage } from 'next';
+import Layout from '../components/Layout';
 
-const Gallery: NextPage = () => {
-  return <div className='text-primary'>Book Gallery</div>;
+const Gallery = () => {
+  return <div className='text-primary'>Gallery</div>;
+};
+
+Gallery.getLayout = function (page: React.ReactNode) {
+  return <Layout title='Trung Vu - Gallery'>{page}</Layout>;
 };
 
 export default Gallery;

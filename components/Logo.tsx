@@ -1,11 +1,13 @@
+import * as React from 'react';
+
 const Logo = () => {
   return (
-    <div className='inline-flex items-center h-full text-transparent cursor-pointer bg-clip-text bg-gradient-to-br from-light-blue to-light-blue-lt'>
+    <>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 10 10'
         role='presentation'
-        className='absolute w-px h-px p-0 overflow-hidden border-0 whitespace-nowrap'
+        className='absolute w-px h-px p-0 overflow-hidden border-0 whitespace-nowrap hih'
       >
         <defs>
           <linearGradient id='grad1' x1='0%' y1='0%' x2='0%' y2='100%'>
@@ -32,7 +34,7 @@ const Logo = () => {
         role='presentation'
         aria-labelledby='deer'
         viewBox='0 0 221 268'
-        className='w-12 2xl:w-14'
+        className='w-12 cursor-pointer 2xl:w-14'
       >
         <title id='deer' lang='en'>
           Deer Icon
@@ -44,12 +46,8 @@ const Logo = () => {
           <path d='M87.8 234.7c.7.3 1.6.2 1.9-.1.4-.3-.2-.6-1.3-.5-1.1 0-1.4.3-.6.6zM99.8 237.7c.6.2 1.8.2 2.5 0 .6-.3.1-.5-1.3-.5-1.4 0-1.9.2-1.2.5zM152.3 237.7c1.5.2 3.7.2 5 0 1.2-.2 0-.4-2.8-.4-2.7 0-3.8.2-2.2.4z' />
         </g>
       </svg>
-
-      <span className='text-2xl font-semibold 2xl:text-3xl font-jost whitespace-nowrap'>
-        TRUNG VU
-      </span>
-    </div>
+    </>
   );
 };
 
-export default Logo;
+export default React.memo(Logo);

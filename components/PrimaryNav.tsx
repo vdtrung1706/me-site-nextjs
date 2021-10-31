@@ -13,7 +13,12 @@ const PrimaryNav = ({ expanded, setExpaned }: PrimaryNavProps) => {
   return (
     <div className='flex items-center justify-between text-light-txt-sec dark:text-dark-txt-sec'>
       <Link href={'/'} passHref>
-        <Logo />
+        <div className='inline-flex items-center h-full text-transparent cursor-pointer bg-clip-text bg-gradient-to-br from-light-blue to-light-blue-lt'>
+          <Logo />
+          <span className='text-2xl font-semibold 2xl:text-3xl font-jost whitespace-nowrap'>
+            TRUNG VU
+          </span>
+        </div>
       </Link>
 
       <div className='flex items-center gap-3 md:hidden'>
@@ -24,4 +29,4 @@ const PrimaryNav = ({ expanded, setExpaned }: PrimaryNavProps) => {
   );
 };
 
-export default PrimaryNav;
+export default React.memo(PrimaryNav);
