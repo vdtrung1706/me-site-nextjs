@@ -15,11 +15,17 @@ module.exports = {
         pri: '#050505',
         sec: '#65676b',
       },
+      gray: '#dae2e2',
       orange: '#ec633a',
       blue: {
         DEFAULT: '#1056c9',
         lt: '#0092f3',
       },
+    },
+    black: {
+      DEFAULT: '#000',
+      400: '#444',
+      800: '#1f1f1f',
     },
   },
   textColor: {

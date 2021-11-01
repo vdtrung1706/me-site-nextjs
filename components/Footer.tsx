@@ -4,69 +4,50 @@ import Link from 'next/link';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import SocialLinks from './SocialLinks';
 
 const Footer = () => {
   return (
-    <div className='flex flex-col items-center gap-4 pt-4 text-sm border-t border-gray-400 dark:border-0 border-opacity-30 text-light-txt-sec dark:text-dark-txt-sec 2xl:text-base whitespace-nowrap'>
-      <Link href={'/'} passHref>
-        <Logo />
-      </Link>
+    <>
+      <div className='flex flex-col items-center gap-4 pb-5 text-sm bg-light-gray dark:bg-dark-base text-light-txt-sec dark:text-dark-txt-sec 2xl:text-base whitespace-nowrap'>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          viewBox='0 0 100 10'
+          preserveAspectRatio='none'
+          className='w-full h-10 pointer-events-none fill-current text-black-800'
+        >
+          <polygon points='100 0, 0 8, 0 0' />
+        </svg>
 
-      <ul className='flex flex-row items-center font-medium list'>
-        <li>
-          <Link href={'/projects'} passHref>
-            <a className='px-2 py-1 list-link'>Projects</a>
-          </Link>
-        </li>
+        <Link href={'/'} passHref>
+          <a>
+            <Logo />
+          </a>
+        </Link>
 
-        <li>
-          <Link href={'/gallery'} passHref>
-            <a className='px-2 py-1 list-link'>Gallery</a>
-          </Link>
-        </li>
-      </ul>
+        <ul className='flex flex-row items-center font-medium list'>
+          <li>
+            <Link href={'/projects'} passHref>
+              <a className='px-2 py-1 list-link'>Projects</a>
+            </Link>
+          </li>
 
-      <div className='w-10/12 h-[2px] bg-gray-400 bg-opacity-30'></div>
+          <li>
+            <Link href={'/gallery'} passHref>
+              <a className='px-2 py-1 list-link'>Gallery</a>
+            </Link>
+          </li>
+        </ul>
 
-      <div>
-        <span className='text-xs'>© TRUNG VU {new Date().getFullYear()}</span>
+        <div className='w-10/12 h-[2px] bg-black-800 bg-opacity-50'></div>
+
+        <div>
+          <h5 className='text-xs'>© TRUNG VU {new Date().getFullYear()}</h5>
+        </div>
+
+        <SocialLinks className='items-center gap-2 list' />
       </div>
-
-      <ul className='items-center gap-2 list'>
-        <li>
-          <a
-            href='https://www.facebook.com/trunpyonvu/'
-            target={'_blank'}
-            rel='noreferrer'
-            className='flex items-center p-1 cursor-pointer list-link'
-          >
-            <FacebookIcon />
-          </a>
-        </li>
-
-        <li>
-          <a
-            href='https://github.com/vdtrung1706'
-            target={'_blank'}
-            rel='noreferrer'
-            className='flex items-center p-1 cursor-pointer list-link'
-          >
-            <GitHubIcon />
-          </a>
-        </li>
-
-        <li>
-          <a
-            href='https://www.instagram.com/trunpyon/'
-            target={'_blank'}
-            rel='noreferrer'
-            className='flex items-center p-1 cursor-pointer list-link'
-          >
-            <InstagramIcon />
-          </a>
-        </li>
-      </ul>
-    </div>
+    </>
   );
 };
 

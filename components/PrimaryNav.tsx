@@ -11,7 +11,7 @@ type PrimaryNavProps = {
 
 const PrimaryNav = ({ expanded, setExpaned }: PrimaryNavProps) => {
   return (
-    <div className='flex items-center justify-between text-light-txt-sec dark:text-dark-txt-sec'>
+    <div className='min-h-[80px] flex items-center justify-between h-full text-light-txt-sec dark:text-dark-txt-sec'>
       <Link href={'/'} passHref>
         <div className='inline-flex items-center h-full text-transparent cursor-pointer bg-clip-text bg-gradient-to-br from-light-blue to-light-blue-lt'>
           <Logo />

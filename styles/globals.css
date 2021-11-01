@@ -23,6 +23,7 @@
   .list {
     @apply flex;
   }
+
   @media only screen and (min-width: 768px) {
     .list:hover .list-link {
       opacity: 0.5;
@@ -30,5 +31,64 @@
     .list .list-link:hover {
       opacity: 1;
     }
+  }
+}
+
+@layer components {
+  .hi-there {
+    width: '100%';
+    height: auto;
+    background: url(../assets/dot.png) 50% repeat;
+  }
+  .about-me {
+    width: '100%';
+    height: auto;
+    background: url(../assets/tokyo_city.jpg) 50% no-repeat;
+    background-size: cover;
+  }
+  .say-hello {
+    width: '100%';
+    height: auto;
+    background: url(../assets/deer.jpg) 50% no-repeat;
+    background-size: cover;
+  }
+}
+
+@layer utilities {
+  .arrows {
+    @apply transition-all duration-100 transform scale-50 text-light-blue active:scale-75 md:active:scale-50 md:hover:scale-75;
+    width: 75px;
+    height: 65px;
+  }
+  .arrows polygon {
+    @apply fill-current animate-arrow-pulse;
+  }
+  .arrows polygon.arrow-top {
+    animation-delay: -1s;
+    -webkit-animation-delay: -1s;
+  }
+  .arrows polygon.arrow-middle {
+    animation-delay: -0.5s;
+    -webkit-animation-delay: -0.5s;
+  }
+  .arrows polygon.arrow-bottom {
+    animation-delay: 0s;
+    -webkit-animation-delay: 0s;
+  }
+
+  .gradient-txt {
+    background-image: linear-gradient(
+      -92deg,
+      #050505 0%,
+      #ec633a 29%,
+      #1056c9 67%,
+      #65676b 100%
+    );
+    color: '#fff';
+    background-clip: border-box;
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
