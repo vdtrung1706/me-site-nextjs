@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useViewport } from '../hooks/useViewport';
+import { useViewport } from '../../hooks/useViewport';
 import PrimaryNav from './PrimaryNav';
 import SecondaryNav from './SecondaryNav';
 

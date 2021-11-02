@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Link from 'next/link';
-import ToggleThemeMode from './buttons/ToggleThemeMode';
+import ToggleThemeMode from '../buttons/ToggleThemeMode';
 
 const SecondaryNav = () => {
   return (

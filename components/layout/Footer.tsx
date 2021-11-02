@@ -1,10 +1,10 @@
 import * as React from 'react';
-import Logo from './Logo';
+import Logo from '../common/Logo';
 import Link from 'next/link';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import SocialLinks from './SocialLinks';
+import SocialLinks from '../common/SocialLinks';
 
 const Footer = () => {
   return (

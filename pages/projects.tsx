@@ -1,4 +1,4 @@
-import Layout from '../components/Layout';
+import Layout from '../components/layout/Layout';
 
 const Projects = () => {
   return <div className='text-primary'>Projects</div>;

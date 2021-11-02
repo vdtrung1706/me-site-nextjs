@@ -2,8 +2,8 @@ import { TextareaAutosize } from '@mui/material';
 import Image from 'next/image';
 import * as React from 'react';
 import TRUNG_VU from '../assets/trung_vu.png';
-import Layout from '../components/Layout';
-import SocialLinks from '../components/SocialLinks';
+import Layout from '../components/layout/Layout';
+import SocialLinks from '../components/common/SocialLinks';
 import { SayHelloResponse } from './api/say-hello';
 
 type SayHelloFormEvent = React.FormEvent<HTMLFormElement> & {

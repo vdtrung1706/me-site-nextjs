@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import * as React from 'react';
-import ToggleMenu from './buttons/ToggleMenu';
-import ToggleThemeMode from './buttons/ToggleThemeMode';
-import Logo from './Logo';
+import ToggleMenu from '../buttons/ToggleMenu';
+import ToggleThemeMode from '../buttons/ToggleThemeMode';
+import Logo from '../common/Logo';
 
 type PrimaryNavProps = {
   expanded: boolean;
