@@ -19,6 +19,8 @@ const SocialLinks = ({
           href='https://www.facebook.com/trunpyonvu/'
           target={'_blank'}
           rel='noreferrer'
+          aria-label='facebook'
+          title='Facebook'
           className={aClassName}
         >
           <FacebookIcon />
@@ -30,6 +32,8 @@ const SocialLinks = ({
           href='https://github.com/vdtrung1706'
           target={'_blank'}
           rel='noreferrer'
+          aria-label='github'
+          title='Github'
           className={aClassName}
         >
           <GitHubIcon />
@@ -41,6 +45,8 @@ const SocialLinks = ({
           href='https://www.instagram.com/trunpyon/'
           target={'_blank'}
           rel='noreferrer'
+          aria-label='instagram'
+          title='Instagram'
           className={aClassName}
         >
           <InstagramIcon />

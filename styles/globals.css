@@ -11,7 +11,7 @@
     @apply bg-gray-400 bg-opacity-0 hover:bg-opacity-20 active:bg-opacity-40;
   }
   .btn-outlined {
-    @apply flex items-center p-1 transition-all duration-200 border border-gray-400 border-opacity-30 hover-outlined;
+    @apply flex items-center p-1 transition-all duration-200 border border-gray-400 rounded-md border-opacity-30 hover-outlined;
   }
   .list-link {
     @apply transition-all duration-200 border-2 border-black border-opacity-0 rounded cursor-pointer active:bg-none focus:bg-opacity-0 active:border-opacity-100 dark:active:border-white max-w-max md:hover:text-black md:dark:hover:text-white;
