@@ -9,5 +9,7 @@ export default function handler(
   res: NextApiResponse<SayHelloResponse>
 ) {
   // console.log(req.body);
-  res.status(201).json({ message: 'Your submission has been received.' });
+  res
+    .status(201)
+    .json({ message: 'Thank you! Your submission has been received.' });
 }

@@ -1,9 +1,11 @@
-import { TextareaAutosize } from '@mui/material';
+import { Alert, AlertTitle, Snackbar, TextareaAutosize } from '@mui/material';
 import Image from 'next/image';
 import * as React from 'react';
 import TRUNG_VU from '../assets/trung_vu.png';
-import Layout from '../components/layout/Layout';
+import MySnackbar from '../components/common/MySnackbar';
 import SocialLinks from '../components/common/SocialLinks';
+import Layout from '../components/layout/Layout';
+import { useSnackbar } from '../hooks/useSnackbar';
 import { SayHelloResponse } from './api/say-hello';
 
 type SayHelloFormEvent = React.FormEvent<HTMLFormElement> & {
@@ -21,6 +23,16 @@ type SayHelloFormEvent = React.FormEvent<HTMLFormElement> & {
 };
 
 const Home = () => {
+  const {
+    snackOpen,
+    alertContent,
+    alertSeverity,
+    setSnackOpen,
+    setAlertContent,
+    setAlertSeverity,
+    handleSnackClose,
+  } = useSnackbar();
+
   function handleScrollClick(
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) {
@@ -40,6 +52,8 @@ const Home = () => {
   const submitSayHello = async (event: SayHelloFormEvent) => {
     event.preventDefault();
 
+    setSnackOpen(false);
+
     const res = await fetch('/api/say-hello', {
       body: JSON.stringify({
         name: event.target.say_hello_name.value,
@@ -52,9 +66,13 @@ const Home = () => {
       method: 'POST',
     });
 
-    const results: SayHelloResponse = await res.json();
+    if (res.ok) {
+      const results: SayHelloResponse = await res.json();
 
-    console.log(`Message:`, results.message);
+      setSnackOpen(true);
+      setAlertSeverity('success');
+      setAlertContent(results.message);
+    }
   };
 
   return (
@@ -135,7 +153,10 @@ const Home = () => {
               little about something such as React, Redux, TS, databases, etc.
             </p>
 
-            <SocialLinks className='flex items-center justify-end gap-1 mt-1 text-dark-txt-sec list' />
+            <SocialLinks
+              className='flex items-center justify-end gap-1 mt-1 text-dark-txt-sec list'
+              liClassName='md:hover:text-white'
+            />
           </div>
         </div>
       </section>
@@ -168,7 +189,6 @@ const Home = () => {
                   name='say_hello_name'
                   autoComplete='name'
                   type='text'
-                  required
                   className='py-1 px-2 border-b border-light-blue h-[30px] bg-black-400'
                 />
               </div>
@@ -197,7 +217,6 @@ const Home = () => {
                 </label>
                 <TextareaAutosize
                   id='say_hello_message'
-                  required
                   minRows={4}
                   className='px-2 py-1 border-b border-light-blue bg-black-400'
                 />
@@ -210,6 +229,13 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <MySnackbar
+        open={snackOpen}
+        severity={alertSeverity}
+        message={alertContent}
+        onClose={handleSnackClose}
+      />
     </>
   );
 };

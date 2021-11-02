@@ -3,7 +3,15 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
-const SocialLinks = ({ className = '' }: { className?: string }) => {
+const SocialLinks = ({
+  className = '',
+  liClassName = '',
+}: {
+  className?: string;
+  liClassName?: string;
+}) => {
+  const aClassName = `flex items-center p-1 cursor-pointer list-link ${liClassName}`;
+
   return (
     <ul className={className}>
       <li>
@@ -11,7 +19,7 @@ const SocialLinks = ({ className = '' }: { className?: string }) => {
           href='https://www.facebook.com/trunpyonvu/'
           target={'_blank'}
           rel='noreferrer'
-          className='flex items-center p-1 cursor-pointer list-link'
+          className={aClassName}
         >
           <FacebookIcon />
         </a>
@@ -22,7 +30,7 @@ const SocialLinks = ({ className = '' }: { className?: string }) => {
           href='https://github.com/vdtrung1706'
           target={'_blank'}
           rel='noreferrer'
-          className='flex items-center p-1 cursor-pointer list-link'
+          className={aClassName}
         >
           <GitHubIcon />
         </a>
@@ -33,7 +41,7 @@ const SocialLinks = ({ className = '' }: { className?: string }) => {
           href='https://www.instagram.com/trunpyon/'
           target={'_blank'}
           rel='noreferrer'
-          className='flex items-center p-1 cursor-pointer list-link'
+          className={aClassName}
         >
           <InstagramIcon />
         </a>
