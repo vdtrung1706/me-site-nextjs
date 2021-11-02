@@ -4,12 +4,28 @@ import * as React from 'react';
 import TRUNG_VU from '../assets/trung_vu.png';
 import Layout from '../components/Layout';
 import SocialLinks from '../components/SocialLinks';
+import { SayHelloResponse } from './api/say-hello';
+
+type SayHelloFormEvent = React.FormEvent<HTMLFormElement> & {
+  target: {
+    say_hello_name: {
+      value: string;
+    };
+    say_hello_email: {
+      value: string;
+    };
+    say_hello_message: {
+      value: string;
+    };
+  };
+};
 
 const Home = () => {
   function handleScrollClick(
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) {
     event.preventDefault();
+
     const targetId = event.currentTarget.getAttribute('href')?.replace('#', '');
 
     if (targetId) {
@@ -20,6 +36,26 @@ const Home = () => {
       });
     }
   }
+
+  const submitSayHello = async (event: SayHelloFormEvent) => {
+    event.preventDefault();
+
+    const res = await fetch('/api/say-hello', {
+      body: JSON.stringify({
+        name: event.target.say_hello_name.value,
+        email: event.target.say_hello_email.value,
+        message: event.target.say_hello_message.value,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+    });
+
+    const results: SayHelloResponse = await res.json();
+
+    console.log(`Message:`, results.message);
+  };
 
   return (
     <>
@@ -116,24 +152,30 @@ const Home = () => {
               SAY HELLO
             </h2>
 
-            <div className='flex flex-col w-full gap-5'>
+            <form
+              onSubmit={submitSayHello}
+              className='flex flex-col w-full gap-5'
+            >
               <div className='flex flex-col'>
                 <label
-                  htmlFor='#say_hello_name'
+                  htmlFor='say_hello_name'
                   className='text-sm text-dark-txt-sec'
                 >
                   Name
                 </label>
                 <input
                   id='say_hello_name'
+                  name='say_hello_name'
+                  autoComplete='name'
                   type='text'
+                  required
                   className='py-1 px-2 border-b border-light-blue h-[30px] bg-black-400'
                 />
               </div>
 
               <div className='flex flex-col'>
                 <label
-                  htmlFor='#say_hello_email'
+                  htmlFor='say_hello_email'
                   className='text-sm text-dark-txt-sec'
                 >
                   Email
@@ -141,6 +183,7 @@ const Home = () => {
                 <input
                   id='say_hello_email'
                   type='text'
+                  autoComplete='email'
                   className='py-1 px-2 border-b border-light-blue h-[30px] bg-black-400'
                 />
               </div>
@@ -148,12 +191,13 @@ const Home = () => {
               <div className='flex flex-col'>
                 <label
                   className='text-sm text-dark-txt-sec'
-                  htmlFor='#say_hello_message'
+                  htmlFor='say_hello_message'
                 >
                   Message
                 </label>
                 <TextareaAutosize
                   id='say_hello_message'
+                  required
                   minRows={4}
                   className='px-2 py-1 border-b border-light-blue bg-black-400'
                 />
@@ -162,7 +206,7 @@ const Home = () => {
               <button className='p-1 min-h-[30px] text-sm font-bold rounded-2xl btn-primary'>
                 SEND
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </section>
