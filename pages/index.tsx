@@ -1,11 +1,26 @@
-import * as React from 'react';
-import Image from 'next/image';
-import Layout from '../components/Layout';
-import TRUNG_VU from '../assets/trung_vu.png';
 import { TextareaAutosize } from '@mui/material';
+import Image from 'next/image';
+import * as React from 'react';
+import TRUNG_VU from '../assets/trung_vu.png';
+import Layout from '../components/Layout';
 import SocialLinks from '../components/SocialLinks';
 
 const Home = () => {
+  function handleScrollClick(
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) {
+    event.preventDefault();
+    const targetId = event.currentTarget.getAttribute('href')?.replace('#', '');
+
+    if (targetId) {
+      const jumpTo = document.getElementById(targetId)?.offsetTop;
+      window.scrollTo({
+        top: jumpTo || 0,
+        behavior: 'smooth',
+      });
+    }
+  }
+
   return (
     <>
       <section className='relative h-[calc(100vh-80px)] hi-there'>
@@ -28,7 +43,11 @@ const Home = () => {
         </svg>
       </section>
 
-      <button className='absolute bottom-0 z-20 transform -translate-x-1/2 left-1/2'>
+      <a
+        href='#about-me'
+        onClick={handleScrollClick}
+        className='absolute bottom-0 z-20 transform -translate-x-1/2 left-1/2'
+      >
         <svg className='arrows'>
           <polygon
             points='37.6,27.9 1.8,1.3 3.3,0 37.6,25.3 71.9,0 73.7,1.3 '
@@ -43,9 +62,12 @@ const Home = () => {
             className='arrow-bottom animate-arrow-pulse'
           />
         </svg>
-      </button>
+      </a>
 
-      <section className='relative flex flex-col w-full text-white md:min-h-screen md:flex-row about-me'>
+      <section
+        id='about-me'
+        className='relative flex flex-col w-full text-white md:min-h-screen md:flex-row about-me'
+      >
         <div className='absolute top-0 bottom-0 left-0 right-0 z-10 w-full h-full bg-black opacity-40' />
 
         <div className='relative z-20 px-[8%] py-5 my-10 bg-opacity-40'>
