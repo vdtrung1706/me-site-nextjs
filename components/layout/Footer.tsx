@@ -1,15 +1,12 @@
+import Link from 'next/link';
 import * as React from 'react';
 import Logo from '../common/Logo';
-import Link from 'next/link';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
 import SocialLinks from '../common/SocialLinks';
 
 const Footer = () => {
   return (
     <>
-      <div className='flex flex-col items-center gap-4 pb-5 text-sm bg-light-gray dark:bg-dark-base text-light-txt-sec dark:text-dark-txt-sec 2xl:text-base whitespace-nowrap'>
+      <div className='flex flex-col items-center gap-4 pb-5 text-sm bg-light-nav dark:bg-black whitespace-nowrap'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 100 10'
@@ -25,7 +22,7 @@ const Footer = () => {
           </a>
         </Link>
 
-        <ul className='flex flex-row items-center font-medium list'>
+        <ul className='flex flex-row items-center font-semibold list'>
           <li>
             <Link href={'/projects'} passHref>
               <a className='px-2 py-1 list-link'>Projects</a>
@@ -39,13 +36,15 @@ const Footer = () => {
           </li>
         </ul>
 
-        <div className='w-10/12 h-[2px] bg-black-800 bg-opacity-50'></div>
-
-        <div>
-          <h5 className='text-xs'>© TRUNG VU {new Date().getFullYear()}</h5>
-        </div>
+        <div className='w-10/12 border opacity-line'></div>
 
         <SocialLinks className='items-center gap-2 list' />
+
+        <div>
+          <h5 className='text-xs text-light-secondary dark:text-dark-secondary'>
+            © TRUNG VU {new Date().getFullYear()}
+          </h5>
+        </div>
       </div>
     </>
   );

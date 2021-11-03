@@ -11,11 +11,11 @@ type PrimaryNavProps = {
 
 const PrimaryNav = ({ expanded, setExpaned }: PrimaryNavProps) => {
   return (
-    <div className='min-h-[80px] flex items-center justify-between h-full text-light-txt-sec dark:text-dark-txt-sec'>
+    <div className='min-h-[80px] flex items-center justify-between h-full'>
       <Link href={'/'} passHref>
-        <div className='inline-flex items-center h-full text-transparent cursor-pointer bg-clip-text bg-gradient-to-br from-light-blue to-light-blue-lt'>
+        <div className='inline-flex items-center h-full text-transparent cursor-pointer bg-clip-text bg-gradient-to-br from-blue to-blue-lt'>
           <Logo />
-          <span className='text-2xl font-semibold 2xl:text-3xl font-jost whitespace-nowrap'>
+          <span className='text-2xl font-bold 2xl:text-3xl font-jost whitespace-nowrap'>
             TRUNG VU
           </span>
         </div>

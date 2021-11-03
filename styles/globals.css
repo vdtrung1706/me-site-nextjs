@@ -8,16 +8,20 @@
 
 @layer base {
   .hover-outlined {
-    @apply bg-gray-400 bg-opacity-0 hover:bg-opacity-20 active:bg-opacity-40;
+    @apply bg-black bg-opacity-5 dark:bg-white dark:bg-opacity-5 hover:bg-opacity-10 dark:hover:bg-opacity-10 dark:active:bg-opacity-15 active:bg-opacity-15;
   }
   .btn-outlined {
-    @apply flex items-center p-1 transition-all duration-200 border border-gray-400 rounded-md border-opacity-30 hover-outlined;
+    @apply flex items-center p-1 transition-all duration-200 border rounded-md border-light-tertiary border-opacity-15 dark:border-dark-quinary dark:border-opacity-15 hover-outlined;
   }
   .list-link {
-    @apply transition-all duration-200 border-2 border-black border-opacity-0 rounded cursor-pointer active:bg-none focus:bg-opacity-0 active:border-opacity-100 dark:active:border-white max-w-max md:hover:text-black md:dark:hover:text-white;
+    @apply transition-all duration-200 border-2 border-black border-opacity-0 rounded-md cursor-pointer active:bg-black active:bg-opacity-5 focus:bg-opacity-0 active:border-opacity-100 dark:active:border-white max-w-max md:hover:text-black md:dark:hover:text-white;
   }
   .btn-primary {
-    @apply bg-gradient-to-r md:hover:bg-gradient-to-l active:bg-gradient-to-l md:active:bg-gradient-to-r from-light-blue to-light-blue-lt;
+    @apply text-white bg-gradient-to-r md:hover:bg-gradient-to-l active:bg-gradient-to-l md:active:bg-gradient-to-r from-blue to-blue-lt;
+  }
+
+  .opacity-line {
+    @apply border-light-tertiary border-opacity-15 dark:border-dark-quinary dark:border-opacity-15;
   }
 
   .list {
@@ -56,7 +60,7 @@
 
 @layer utilities {
   .arrows {
-    @apply transition-all duration-100 transform scale-50 text-light-blue active:scale-75 md:active:scale-50 md:hover:scale-75;
+    @apply transition-all duration-100 transform scale-50 text-light-quaternary active:scale-75 md:active:scale-50 md:hover:scale-75;
     width: 75px;
     height: 65px;
   }

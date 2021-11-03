@@ -1,4 +1,4 @@
-import { Alert, AlertTitle, Snackbar, TextareaAutosize } from '@mui/material';
+import { TextareaAutosize } from '@mui/material';
 import Image from 'next/image';
 import * as React from 'react';
 import TRUNG_VU from '../assets/trung_vu.png';
@@ -124,12 +124,12 @@ const Home = () => {
       >
         <div className='absolute top-0 bottom-0 left-0 right-0 z-10 w-full h-full bg-black opacity-40' />
 
-        <div className='relative z-20 px-[8%] py-5 my-10 bg-opacity-40'>
+        <div className='relative z-20 px-[8%] py-5 md:my-10'>
           <h2 className='w-full mb-5 text-3xl font-semibold font-jost'>
             ABOUT ME
           </h2>
 
-          <div className='p-5 bg-black border-l-2 bg-opacity-60 border-light-orange xl:max-w-2xl'>
+          <div className='p-5 bg-black border-l-2 bg-opacity-60 border-orange xl:max-w-2xl'>
             <div className='flex items-center w-full gap-5'>
               <Image
                 src={TRUNG_VU}
@@ -141,11 +141,11 @@ const Home = () => {
 
               <div className='font-medium'>
                 <h3 className='text-3xl'>Trung Vu</h3>
-                <h5 className='text-xs text-dark-txt-sec'>Software engineer</h5>
+                <h5 className='text-xs text-dark-primary'>Software engineer</h5>
               </div>
             </div>
 
-            <p className='pt-5 text-lg leading-relaxed text-dark-txt-sec'>
+            <p className='pt-5 text-lg leading-relaxed text-dark-primary'>
               Trung Vu is currently a student at HCMUS, Vietnam. He is
               interested in Web Applications. Hence, he first wants to become a
               fantastic full-stack engineer. In order to achieve this, he
@@ -154,7 +154,7 @@ const Home = () => {
             </p>
 
             <SocialLinks
-              className='flex items-center justify-end gap-1 mt-1 text-dark-txt-sec list'
+              className='flex items-center justify-end gap-1 mt-1 text-dark-primary list'
               liClassName='md:hover:text-white'
             />
           </div>
@@ -175,50 +175,35 @@ const Home = () => {
 
             <form
               onSubmit={submitSayHello}
-              className='flex flex-col w-full gap-5'
+              className='flex flex-col w-full gap-5 text-sm text-dark-primary'
             >
               <div className='flex flex-col'>
-                <label
-                  htmlFor='say_hello_name'
-                  className='text-sm text-dark-txt-sec'
-                >
-                  Name
-                </label>
+                <label htmlFor='say_hello_name'>Name</label>
                 <input
                   id='say_hello_name'
                   name='say_hello_name'
                   autoComplete='name'
                   type='text'
-                  className='py-1 px-2 border-b border-light-blue h-[30px] bg-black-400'
+                  className='py-1 px-2 border-b border-light-quaternary text-white h-[30px] bg-black-400'
                 />
               </div>
 
               <div className='flex flex-col'>
-                <label
-                  htmlFor='say_hello_email'
-                  className='text-sm text-dark-txt-sec'
-                >
-                  Email
-                </label>
+                <label htmlFor='say_hello_email'>Email</label>
                 <input
                   id='say_hello_email'
                   type='text'
                   autoComplete='email'
-                  className='py-1 px-2 border-b border-light-blue h-[30px] bg-black-400'
+                  className='py-1 px-2 border-b border-light-quaternary text-white h-[30px] bg-black-400'
                 />
               </div>
 
               <div className='flex flex-col'>
-                <label
-                  className='text-sm text-dark-txt-sec'
-                  htmlFor='say_hello_message'
-                >
-                  Message
-                </label>
+                <label htmlFor='say_hello_message'>Message</label>
                 <TextareaAutosize
                   id='say_hello_message'
                   minRows={4}
-                  className='px-2 py-1 border-b border-light-blue bg-black-400'
+                  className='px-2 py-1 text-white border-b border-light-quaternary bg-black-400'
                 />
               </div>
 

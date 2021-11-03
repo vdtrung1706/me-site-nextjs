@@ -9,12 +9,13 @@ const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
     maxWidth: 220,
     margin: 0,
     padding: 0,
+    borderRadius: '100%',
   },
 }));
 
 const MyTooltipTitle: React.FC = ({ children }) => {
   return (
-    <div className='px-3 py-2 text-white rounded-md text-opacity-90 font-open-sans font-xs bg-black-400'>
+    <div className='px-3 py-[6px] font-sans text-white rounded-lg font-xs bg-light-secondary'>
       {children}
     </div>
   );

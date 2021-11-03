@@ -14,7 +14,7 @@ const Nav = () => {
 
   return (
     <>
-      <nav className='relative z-50 bg-gradient-to-r from-light-gray dark:from-black dark:via-black dark:to-gray-900'>
+      <nav className='relative z-50 bg-gradient-to-r from-light-nav via-light-nav to-transparent dark:from-black dark:via-black dark:to-gray-800 '>
         <div className='flex flex-col mx-[2%] md:mx-[4%] md:flex-row md:justify-between md:items-center'>
           <PrimaryNav expanded={expanded} setExpaned={setExpanded} />
           {expanded || viewWidth >= 768 ? <SecondaryNav /> : null}

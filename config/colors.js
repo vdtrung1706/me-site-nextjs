@@ -1,47 +1,37 @@
 module.exports = {
   colors: {
     dark: {
-      base: '#141618',
-      txt: {
-        pri: '#fff',
-        sec: '#b5b3b3',
-      },
-      orange: '#ec633a',
-      blue: '#1056c9',
+      base: '#0d1117',
+      primary: '#c9d1d9',
+      secondary: '#8b949e',
+      tertiary: '#30363d',
+      quaternary: '#58a6ff',
+      quinary: '#f0f6fc',
+      nav: '#000000',
     },
     light: {
-      base: '#fff',
-      txt: {
-        pri: '#050505',
-        sec: '#65676b',
-      },
-      gray: '#dae2e2',
-      orange: '#ec633a',
-      blue: {
-        DEFAULT: '#1056c9',
-        lt: '#0092f3',
-      },
+      base: '#ffffff',
+      primary: '#24292f',
+      secondary: '#57606a',
+      tertiary: '#1b1f24',
+      quaternary: '#0969da',
+      nav: '#dae2e2',
+    },
+    silver: '#c0c0c0',
+    orange: {
+      DEFAULT: '#ec633a',
+    },
+    blue: {
+      DEFAULT: '#1056c9',
+      lt: '#0092f3',
     },
     black: {
-      DEFAULT: '#000',
+      DEFAULT: '#000000',
       400: '#474747',
       800: '#1f1f1f',
     },
   },
-  textColor: {
-    primary: 'var(--text-primary)',
-    secondary: 'var(--text-secondary)',
-    tertiary: 'var(--text-tertiary)',
-  },
-  backgroundColor: {
-    base: 'var(--background-base)',
-    primary: 'var(--background-primary)',
-    secondary: 'var(--background-secondary)',
-    tertiary: 'var(--background-tertiary)',
-  },
-  borderColor: {
-    primary: 'var(--border-primary)',
-    secondary: 'var(--border-secondary)',
-    tertiary: 'var(--border-tertiary)',
+  opacity: {
+    15: '.15',
   },
 };

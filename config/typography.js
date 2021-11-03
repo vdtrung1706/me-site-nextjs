@@ -1,6 +1,6 @@
 module.exports = {
   fontFamily: {
     jost: ['Jost', 'sans-serif'],
-    'open-sans': ['Open Sans', 'sans-serif'],
+    sans: ['-apple-system', 'ui-sans-serif', 'system-ui'],
   },
 };

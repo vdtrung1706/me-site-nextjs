@@ -1,4 +1,3 @@
-import { SnackbarCloseReason } from '@mui/material';
 import { AlertColor } from '@mui/material/Alert';
 import * as React from 'react';
 

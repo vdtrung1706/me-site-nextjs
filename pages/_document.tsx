@@ -35,7 +35,7 @@ export default class MyDocument extends Document {
           />
           <link rel='icon' href='./favicon.svg' />
         </Head>
-        <body className='bg-light-base dark:bg-dark-base font-open-sans'>
+        <body className='font-sans bg-light-base dark:bg-dark-base text-light-primary dark:text-dark-primary'>
           <Main />
           <NextScript />
         </body>
