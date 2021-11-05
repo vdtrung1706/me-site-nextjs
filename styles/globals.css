@@ -19,6 +19,9 @@
   .btn-primary {
     @apply text-white bg-gradient-to-r md:hover:bg-gradient-to-l active:bg-gradient-to-l md:active:bg-gradient-to-r from-blue to-blue-lt;
   }
+  .btn-secondary {
+    @apply text-white bg-orange hover:bg-orange-hv;
+  }
 
   .opacity-line {
     @apply border-light-tertiary border-opacity-15 dark:border-dark-quinary dark:border-opacity-15;
@@ -26,6 +29,10 @@
 
   .list {
     @apply flex;
+  }
+
+  .hr-border {
+    @apply border-light-tertiary border-opacity-20 dark:border-dark-quinary dark:border-opacity-20;
   }
 
   @media only screen and (min-width: 768px) {

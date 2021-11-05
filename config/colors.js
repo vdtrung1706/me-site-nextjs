@@ -19,7 +19,8 @@ module.exports = {
     },
     silver: '#c0c0c0',
     orange: {
-      DEFAULT: '#ec633a',
+      DEFAULT: '#c94f17',
+      hv: '#e7682e',
     },
     blue: {
       DEFAULT: '#1056c9',
