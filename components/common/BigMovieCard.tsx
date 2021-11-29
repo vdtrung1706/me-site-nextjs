@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { IMAGE_BASE } from '../../services/common';
-import { TMDBMovie, TMDBTv } from '../../types/common';
 import { createHrefOfTMDB } from '../../utils/helper';
 
 type BigMovieCardProps = {
