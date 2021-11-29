@@ -8,7 +8,7 @@
 
 @layer base {
   .hover-outlined {
-    @apply bg-black bg-opacity-5 dark:bg-white dark:bg-opacity-5 hover:bg-opacity-10 dark:hover:bg-opacity-10 dark:active:bg-opacity-15 active:bg-opacity-15;
+    @apply bg-black bg-opacity-5 dark:bg-white dark:bg-opacity-5 md:hover:bg-opacity-10 md:dark:hover:bg-opacity-10 dark:active:bg-opacity-15 active:bg-opacity-15;
   }
   .btn-outlined {
     @apply flex items-center p-1 transition-all duration-200 border rounded-md border-light-tertiary border-opacity-15 dark:border-dark-quinary dark:border-opacity-15 hover-outlined;
@@ -31,8 +31,8 @@
     @apply flex;
   }
 
-  .hr-border {
-    @apply border-light-tertiary border-opacity-20 dark:border-dark-quinary dark:border-opacity-20;
+  .hr {
+    @apply w-full h-[2px] bg-light-tertiary bg-opacity-20 dark:bg-dark-quinary dark:bg-opacity-20;
   }
 
   @media only screen and (min-width: 768px) {

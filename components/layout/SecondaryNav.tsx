@@ -27,8 +27,8 @@ const SecondaryNav = () => {
 
       <div className='flex items-center gap-3 my-1 md:ml-10 md:my-0'>
         <Link href={'/signin'} passHref>
-          <a className='inline-block rounded-2xl w-full h-[30px] px-5 py-1 mt-2 -mx-2 text-center cursor-pointer btn-primary md:m-0 md:max-w-max'>
-            Sign in
+          <a className='inline-block rounded-2xl w-full h-[30px] px-5 py-1 mt-2 -mx-2 text-center font-semibold cursor-pointer btn-primary md:m-0 md:max-w-max'>
+            Sign In
           </a>
         </Link>
 

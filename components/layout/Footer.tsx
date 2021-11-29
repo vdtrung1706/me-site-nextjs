@@ -36,7 +36,7 @@ const Footer = () => {
           </li>
         </ul>
 
-        <div className='w-10/12 border opacity-line'></div>
+        <div className='w-10/12 hr'></div>
 
         <SocialLinks className='items-center gap-2 list' />
 

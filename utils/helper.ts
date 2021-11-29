@@ -1,4 +1,5 @@
 import { format, formatDistance } from 'date-fns';
+import { TMDBMovie, TMDBTv } from '../types/common';
 
 export function updatedAtConverter(date: string) {
   return formatDistance(new Date(date), new Date(), { addSuffix: true });
@@ -18,4 +19,8 @@ export function formatDate(date: number | Date) {
 
 export function formatVoteAverage(num: number) {
   return `${Math.ceil(num) * 10}%`;
+}
+
+export function createHrefOfTMDB(id: number, name: string) {
+  return `https://www.themoviedb.org/tv/${id}-${createIdByWords(name)}`;
 }

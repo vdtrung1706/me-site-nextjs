@@ -8,6 +8,7 @@ import * as React from 'react';
 import Layout from '../components/layout/Layout';
 import { ListUserReposResponse } from '../types/common';
 import { updatedAtConverter } from '../utils/helper';
+import Link from 'next/link';
 
 interface ProjectsProps {
   repos: ListUserReposResponse[];
@@ -41,48 +42,42 @@ const Projects: React.FC<ProjectsProps> & {
             })}
           >
             {repos.map((repo) => (
-              <div
-                key={repo.node_id}
-                className='p-2 mx-2 border-b text-light-secondary dark:text-dark-secondary opacity-line hover-outlined active:bg-opacity-10'
-              >
-                <div className='flex items-baseline gap-2'>
-                  <a
-                    href={repo.html_url}
-                    target={'_black'}
-                    className='text-xl font-semibold cursor-pointer text-light-quaternary dark:text-dark-quaternary max-w-max md:hover:underline'
-                  >
-                    {repo.name}
-                  </a>
-                  {!repo.private && (
-                    <span className='px-2 py-px my-auto text-xs border rounded-xl opacity-line'>
-                      Public
-                    </span>
-                  )}
-                </div>
+              <Link key={repo.node_id} href={repo.html_url} passHref>
+                <a target={'_blank'}>
+                  <div className='p-2 mx-2 border-b group text-light-secondary dark:text-dark-secondary opacity-line hover-outlined active:bg-opacity-10'>
+                    <div className='flex items-baseline gap-2'>
+                      <span className='text-xl font-semibold cursor-pointer text-light-quaternary dark:text-dark-quaternary max-w-max md:group-hover:underline'>
+                        {repo.name}
+                      </span>
+                      {!repo.private && (
+                        <span className='px-2 py-px my-auto text-xs border rounded-xl opacity-line'>
+                          Public
+                        </span>
+                      )}
+                    </div>
 
-                <p className='text-sm'>{repo.description}</p>
+                    <p className='text-sm'>{repo.description}</p>
 
-                <p className='flex items-center gap-4 py-2 text-xs'>
-                  {repo.language && (
-                    <span className='flex items-center whitespace-nowrap'>
-                      <CircleRoundedIcon
-                        className='font-sm'
-                        fontSize='inherit'
-                      />
-                      <span className='ml-1'>{repo.language}</span>
-                    </span>
-                  )}
+                    <p className='flex items-center gap-4 py-2 text-xs'>
+                      {repo.language && (
+                        <span className='flex items-center whitespace-nowrap'>
+                          <span className='w-1.5 h-1.5 rounded-full bg-light-secondary dark:bg-dark-secondary' />
+                          <span className='ml-1'>{repo.language}</span>
+                        </span>
+                      )}
 
-                  <span>
-                    <StarBorderRoundedIcon fontSize='small' />
-                    <span className='align-middle'>
-                      {repo.stargazers_count}
-                    </span>
-                  </span>
+                      <span>
+                        <StarBorderRoundedIcon fontSize='small' />
+                        <span className='align-middle'>
+                          {repo.stargazers_count}
+                        </span>
+                      </span>
 
-                  <span>Updated {updatedAtConverter(repo.updated_at)}</span>
-                </p>
-              </div>
+                      <span>Updated {updatedAtConverter(repo.updated_at)}</span>
+                    </p>
+                  </div>
+                </a>
+              </Link>
             ))}
           </div>
 

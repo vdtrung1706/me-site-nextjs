@@ -147,10 +147,10 @@ const Home = () => {
 
             <p className='pt-5 text-lg leading-relaxed text-dark-primary'>
               Trung Vu is currently a student at HCMUS, Vietnam. He is
-              interested in Web Applications. Hence, he first wants to become a
-              fantastic full-stack engineer. In order to achieve this, he
-              focuses mainly on JS, Nodejs. Besides, he has also been learned a
-              little about something such as React, Redux, TS, databases, etc.
+              interested in Web Applications. Hence, he wants to become a
+              fantastic full-stack developer. To achieve this goal, he focuses
+              mainly on JS, Nodejs. Besides, he has also learned something such
+              as React, Redux, TS, databases, etc.
             </p>
 
             <SocialLinks
